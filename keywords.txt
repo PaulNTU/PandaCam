@@ -1,0 +1,16 @@
+PandaCam KEYWORD1
+Init KEYWORD2
+PanCamera KEYWORD2
+PanToAngle KEYWORD2
+TiltCamera KEYWORD2
+TiltToAngle KEYWORD2
+Update KEYWORD2
+GetCameraPositionStatus KEYWORD2
+GetPanPosition KEYWORD2
+GetPanDestinationAngle KEYWORD2
+GetTiltPosition KEYWORD2
+GetTiltDestinationAngle KEYWORD2
+ForceStop KEYWORD2
+GoHome KEYWORD2
+
+
