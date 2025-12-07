@@ -132,7 +132,7 @@ String PandaCam::GetCameraFirmwareVersion()
 void PandaCam::PanCamera(int direction)
 {
   // Check we have valid inputs
-  if(direction == PAN_LEFT || direction == PAN_RIGHT)
+  if(direction == PAN_LEFT || direction == PAN_RIGHT || direction == PAN_STOP)
   {
     // Send I2C Command
     uint8_t command[2] = {PAN_COMMAND, (uint8_t)direction};
@@ -143,7 +143,7 @@ void PandaCam::PanCamera(int direction)
 void PandaCam::TiltCamera(int direction)
 {
   // Check we have valid inputs
-  if(direction == TILT_UP || direction == TILT_DOWN)
+  if(direction == TILT_UP || direction == TILT_DOWN || direction == PAN_STOP)
   {
     // Send I2C Command
     uint8_t command[2] = {TILT_COMMAND, (uint8_t)direction};

@@ -14,10 +14,12 @@
 #define PAN_LEFT 0x00
 #define PAN_RIGHT 0x01
 #define PAN_TO 0x02
+#define PAN_STOP 0x03
 
 #define TILT_UP 0x00
 #define TILT_DOWN 0x01
 #define TILT_TO 0x02
+#define TILT_STOP 0x03
 
 #define STATUS_FIRMWARE 0x00
 #define STATUS_POSITION 0x01 

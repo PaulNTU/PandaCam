@@ -122,13 +122,16 @@ void CheckForIncommingSerial()
           camera.GoHome();
           break;
 
+        case 'q':
+          camera.PanCamera(PAN_STOP);
+          break;
+
         case 'p':
           if(count > 0)
           {
             camera.PanToAngle(angle);
           }
           break;
-
         case 't':
           if(count > 0)
           {
