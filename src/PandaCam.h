@@ -58,7 +58,7 @@ class PandaCam
     
   public:
     bool Init();
-	void SetMovementLimits(int panMin, int panMax, int tiltMin, int tiltMax);
+	void SetMovementLimits(int minTiltAngle, int maxTiltAngle, int minPanAngle, int maxPanAngle);
 
     bool Update();
 
