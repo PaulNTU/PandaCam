@@ -10,6 +10,7 @@
 #define PAN_COMMAND 0x02
 #define TILT_COMMAND 0x03
 #define HOME_COMMAND 0x04
+#define SETTINGS_COMMAND 0x05
 
 #define PAN_LEFT 0x00
 #define PAN_RIGHT 0x01
@@ -24,6 +25,8 @@
 #define STATUS_FIRMWARE 0x00
 #define STATUS_POSITION 0x01 
 
+#define SETTINGS_LIMITS 0x00
+
 #define PANDACAM_STATUS_IDLE 0x00
 #define PANDACAM_STATUS_MOVING 0x01
 #define PANDACAM_STATUS_ARRIVED 0x02
@@ -34,6 +37,8 @@
 #define CAMERA_STATUS_MOVING 0x03
 #define CAMERA_STATUS_HEADINGHOME 0x04
 #define CAMERA_STATUS_ABORTED 0x05
+
+#define PANDACAM_DEFAULT -1
 
 class PandaCam
 {
@@ -53,6 +58,7 @@ class PandaCam
     
   public:
     bool Init();
+	void SetMovementLimits(int panMin, int panMax, int tiltMin, int tiltMax);
 
     bool Update();
 
