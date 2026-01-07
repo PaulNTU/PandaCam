@@ -11,9 +11,6 @@ void setup() {
   {
     Serial.print("Camera Initialised Ok.\r\n Firmware Version: ");
     Serial.println(camera.GetCameraFirmwareVersion());
-
-    
-    camera.PanCamera(PAN_LEFT);
   }
   else
   {

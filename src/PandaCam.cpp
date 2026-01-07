@@ -212,3 +212,28 @@ int PandaCam::GetResponse(uint8_t *data, int len)
 
   return readBytes;
 }
+
+void PandaCam::SetMovementLimits(int minTiltAngle, int maxTiltAngle, int minPanAngle, int maxPanAngle)
+{
+	// Send I2C Command
+	uint8_t command[10] = { SETTINGS_COMMAND, SETTINGS_LIMITS, 0, 0, 0, 0, 0, 0, 0, 0 };
+
+	// Convert minTiltAngle to 2 bytes for transmission
+	command[2] = (minTiltAngle >> 8) & 0xFF;
+	command[3] = minTiltAngle & 0xFF;
+
+	// Convert maxTiltAngle to 2 bytes for transmission
+	command[4] = (maxTiltAngle >> 8) & 0xFF;
+	command[5] = maxTiltAngle & 0xFF;
+
+	// Convert minPanAngle to 2 bytes for transmission
+	command[6] = (minPanAngle >> 8) & 0xFF;
+	command[7] = minPanAngle & 0xFF;
+
+	// Convert maxPanAngle to 2 bytes for transmission
+	command[8] = (maxPanAngle >> 8) & 0xFF;
+	command[9] = maxPanAngle & 0xFF;
+
+	// Send the request
+	SendCommand(command, sizeof(command));
+}
